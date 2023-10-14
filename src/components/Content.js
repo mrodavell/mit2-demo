@@ -1,35 +1,22 @@
-import { View, TextInput, Button } from "react-native";
+import { View, Text, Button, Alert } from "react-native";
 import SwitchButton from "./ui/SwitchButton";
+import MyTextField from "./ui/MyTextField";
 
-export default function Content() {
+export default function Content(props) { 
+  const handlePress = (params) => {
+    Alert.alert(`The Button was Pressed by ${params}`);
+  };
+
   return (
     <View>
-      <TextInput
-        placeholder="Email"
-        style={{
-          borderWidth: 1,
-          width: 250,
-          marginTop: 15,
-          height: 50,
-          paddingLeft: 10,
-          marginBottom: 10,
-        }}
-      />
-      <TextInput
-        placeholder="Password"
-        style={{
-          borderWidth: 1,
-          width: 250,
-          height: 50,
-          paddingLeft: 10,
-          marginBottom: 10,
-        }}
-      />
+      {props.children}
+      <MyTextField title={"Email"} marginTop={15} />
+      <MyTextField title={"Password"} />
       <View>
-        <Button title="Login" />
+        <Button title="Login" onPress={() => handlePress("Jomar")} />
       </View>
       <View style={{ marginTop: 5 }}>
-        <Button title="Sigup" />
+        <Button title="Signup" />
       </View>
       <View>
         <SwitchButton />
