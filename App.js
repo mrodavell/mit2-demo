@@ -1,24 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, Text, StyleSheet } from "react-native";
+import Header from "./src/components/Header";
+import Content from "./src/components/Content";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.colorRed}>Jomar C. Llevado</Text>
-      <StatusBar style="auto" />
-    </View> 
+    <View style={styles.box}>
+      <Header />
+      <Content /> 
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  box: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    flexGrow: 1,
   },
-  colorRed:{
-    color: 'red',
-    fontSize: 80
-  }
 });
