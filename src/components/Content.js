@@ -1,29 +1,28 @@
-import { View, TextInput, Button, StyleSheet } from "react-native";
+import { View } from "react-native";
+import { TextInput, Button } from "react-native-paper";
+import Header from "./Header";
 export default function Content() {
   return (
-    <View>
-      <View style={{ marginTop: 15 }}>
-        <TextInput placeholder="Email" style={styles.textInput} />
-      </View>
-      <View>
-        <TextInput placeholder="Password" style={styles.textInput} />
-      </View>
-      <View>
-        <Button title="Login" />
-      </View>
+    <View style={{ flex: 1, width: 300, justifyContent: "center" }}>
+      <Header />
+      <TextInput
+        label="Email"
+        placeholder="Email"
+        style={{ marginBottom: 5, marginTop: 10 }}
+      />
+      <TextInput label="Password" placeholder="Password" secureTextEntry />
+      <Button
+        icon="login"
+        mode="contained"
+        onPress={() => console.log("Pressed")}
+        uppercase
+        style={{ marginTop: 10 }}
+      >
+        Login
+      </Button>
       <View style={{ marginTop: 5 }}>
-        <Button title="Sigup" />
+        <Button title="Sigup" labelStyle={{ margin: 10 }} />
       </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  textInput: {
-    borderWidth: 1,
-    width: 250,
-    height: 50,
-    paddingLeft: 10,
-    marginBottom: 10,
-  },
-});

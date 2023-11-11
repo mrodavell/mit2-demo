@@ -9,7 +9,7 @@ export default function App() {
     <PaperProvider>
       <SafeAreaView style={{ flex: 1, paddingTop: StatusBar.currentHeight }}>
         <StatusBar style="dark" />
-        <View>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <LoginPage />
         </View>
       </SafeAreaView>
