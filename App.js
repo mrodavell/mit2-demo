@@ -1,16 +1,11 @@
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { PaperProvider } from "react-native-paper";
-import NavigationStack from "./src/components/navigation/NavigationStack";
+import { SafeAreaView } from "react-native-safe-area-context"; 
 
 export default function App() {
 
-  return (
-    <PaperProvider>
-      <SafeAreaView style={{ flex: 1, paddingTop: StatusBar.currentHeight }}>
-        <StatusBar style="dark" />
-        <NavigationStack />
-      </SafeAreaView>
-    </PaperProvider>
+  return ( 
+      <SafeAreaView style={{ flex: 1, paddingTop: StatusBar.currentHeight }}> 
+        <Text>Test State Management</Text>
+      </SafeAreaView> 
   );
 }
