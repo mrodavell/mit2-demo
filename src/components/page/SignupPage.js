@@ -1,11 +1,10 @@
 import { View, Text } from "react-native";
-import React from "react";
-import LoginForm from "../forms/LoginForm";
+import SignupForm from "../forms/SignupForm";
 
-export default function LoginPage(props) {
+export default function SignupPage(props) {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <LoginForm {...props} />
+      <SignupForm {...props} />
     </View>
   );
 }
