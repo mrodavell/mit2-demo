@@ -2,16 +2,16 @@ import { View } from "react-native";
 import { TextInput, Button } from "react-native-paper";
 import Header from "../Header";
 
-export default function LoginForm({ navigation }) {
-
+export default function LoginForm({ navigation, appName }) {
   const doLogin = () => {
     // check credentials
-    navigation.navigate("Home")
-  }
+    navigation.navigate("Home");
+  };
 
   return (
     <View style={{ flex: 1, width: 300, justifyContent: "center" }}>
       <Header />
+      <Text>{appName}</Text>
       <TextInput
         label="Email"
         placeholder="Email"

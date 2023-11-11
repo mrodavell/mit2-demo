@@ -7,7 +7,7 @@ import HomePage from "../page/HomePage";
 
 const Stack = createNativeStackNavigator();
 
-export default function NavigationStack() {
+export default function NavigationStack(props) {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">

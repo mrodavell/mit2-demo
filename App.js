@@ -4,6 +4,7 @@ import { PaperProvider } from "react-native-paper";
 import NavigationStack from "./src/components/navigation/NavigationStack";
 
 export default function App() {
+
   return (
     <PaperProvider>
       <SafeAreaView style={{ flex: 1, paddingTop: StatusBar.currentHeight }}>
