@@ -1,39 +1,43 @@
-import { View, TextInput, Button } from "react-native";
-import SwitchButton from "./ui/SwitchButton";
+import { View, StyleSheet, Keyboard } from "react-native";
+import { TextInput, Button } from "react-native-paper";
+import globalstyles from "../config/styles";
+import React from "react";
 
 export default function Content() {
+  const [showPassword, setShowPassword] = React.useState(false);
   return (
-    <View>
+    <View style={{ flex: 1, marginTop: 20 }}>
       <TextInput
         placeholder="Email"
-        style={{
-          borderWidth: 1,
-          width: 250,
-          marginTop: 15,
-          height: 50,
-          paddingLeft: 10,
-          marginBottom: 10,
-        }}
+        label="Email"
+        style={{ marginBottom: 5 }}
       />
       <TextInput
         placeholder="Password"
-        style={{
-          borderWidth: 1,
-          width: 250,
-          height: 50,
-          paddingLeft: 10,
-          marginBottom: 10,
-        }}
+        label="Password"
+        secureTextEntry={!showPassword}
+        right={
+          <TextInput.Icon
+            icon={showPassword ? "eye" : "eye-off"}
+            onPress={() => {
+              Keyboard.dismiss;
+              setShowPassword(!showPassword);
+            }}
+          />
+        }
       />
-      <View>
-        <Button title="Login" />
+      <View style={{ marginTop: 10 }}>
+        <Button icon="login" mode="contained">
+          Login
+        </Button>
       </View>
       <View style={{ marginTop: 5 }}>
-        <Button title="Sigup" />
-      </View>
-      <View>
-        <SwitchButton />
+        <Button icon="account-plus" mode="contained">
+          Signup
+        </Button>
       </View>
     </View>
   );
 }
+
+const styles = StyleSheet.create(globalstyles);
