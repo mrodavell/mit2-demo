@@ -31,7 +31,7 @@ export default function SignupForm({ navigation }) {
         <Button
           icon="arrow-left-thin"
           mode="contained"
-          onPress={() => navigation.pop()}
+          onPress={() => navigation.popToTop()}
           uppercase
           style={{ marginTop: 10 }}
         >
